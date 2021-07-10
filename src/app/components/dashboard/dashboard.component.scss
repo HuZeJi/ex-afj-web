@@ -1,0 +1,251 @@
+.container {
+  background: linear-gradient(90deg, #5e7cff 0%, rgba(239, 94, 255, 0) 100%),
+    #5eccff;
+  height: 100%;
+}
+
+.month-cards {
+  scrollbar-color: rgba(255, 255, 255, 0.8) rgba(255, 255, 255, 0.2);
+  scrollbar-width: thin;
+}
+
+.month-cards::-webkit-scrollbar {
+  height: 7.5px;
+}
+
+.month-cards::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.month-cards::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.month-cards {
+  display: flex;
+  max-width: 100vw;
+  min-height: calc(25vh - 40px);
+  overflow-x: scroll;
+
+  .month-card {
+    cursor: pointer;
+    min-width: 250px;
+    margin: 20px;
+
+    display: flex;
+    align-items: center;
+
+    .content {
+      padding: 20px;
+      width: 100%;
+
+      div {
+        line-height: 150%;
+      }
+
+      small {
+        font-size: 0.6rem;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .year {
+        font-size: 0.6rem;
+        line-height: 0% !important;
+        margin-bottom: 20px;
+      }
+
+      * {
+        color: white;
+      }
+    }
+  }
+
+  .month-low {
+    background: linear-gradient(90deg, #99395e 0%, rgba(153, 57, 94, 0) 100%),
+      #e66c9a;
+    box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+
+  .month-high {
+    background: linear-gradient(90deg, #3fbfac 0%, rgba(85, 255, 230, 0) 100%),
+      #54cae5;
+    box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+}
+
+.table-reference {
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+
+.balance-table {
+  height: 50vh;
+  width: 75%;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0px 50px;
+  padding-bottom: 25px;
+}
+
+.balance-table {
+  scrollbar-color: rgba(255, 255, 255, 0.8) rgba(255, 255, 255, 0.2);
+  scrollbar-width: thin;
+}
+
+.balance-table::-webkit-scrollbar {
+  width: 7.5px;
+}
+
+.balance-table::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.balance-table::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.balance-content {
+  width: 100%;
+}
+
+.balance-header {
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+
+  .balance-header-content {
+    display: inline-grid;
+    width: 100%;
+
+    .navbar-header {
+      height: 80px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      .add-movement,
+      .logout {
+        cursor: pointer;
+        background: #5e7cff;
+        border: 1px solid #708afe;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        padding: 0 10px;
+        width: 180px;
+        height: 40px;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        * {
+          color: white;
+        }
+
+        span {
+          font-size: 0.7rem;
+          margin-top: 5px;
+        }
+      }
+
+      .logout {
+        background: #5dc8ff;
+      }
+
+      .navbar {
+        padding: 5px 0;
+        width: 200px;
+        border-radius: 50px;
+        background: #5da3ff;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border: 2px solid #a1b4fd;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        * {
+          cursor: pointer;
+          color: white;
+        }
+      }
+    }
+
+    .title {
+      display: inline-grid;
+      
+      * {
+        display: flex;
+        justify-content: center;
+      }
+
+      span {
+        font-size: 3.5rem;
+        line-height: 0;
+        padding-top: 50px;
+        display: flex;
+        width: 100%;
+
+        i {
+          width: 35px;
+          height: 35px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1.5rem;
+          cursor: pointer;
+          border-radius: 100px;
+        }
+
+        i:hover {
+          background-color: rgba(255, 255, 255, 0.2);
+        }
+      }
+      small {
+        font-size: 0.8rem;
+        text-align: center;
+      }
+    }
+  }
+}
+
+:host::ng-deep {
+  * {
+    border-bottom-width: 0;
+    color: white;
+  }
+
+  .mat-table {
+    width: 100%;
+    background-color: transparent;
+
+    thead {
+      display: none;
+      height: 0;
+    }
+
+    .amountColumn {
+      text-align: end;
+      padding-right: 50px;
+    }
+
+    .dateColumn {
+      text-align: center;
+    }
+
+    td {
+      width: 33.3%;
+    }
+
+    * {
+      font-size: 0.6rem;
+    }
+  }
+}

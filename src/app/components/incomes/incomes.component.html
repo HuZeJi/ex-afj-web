@@ -1,0 +1,56 @@
+<div class="background-content"></div>
+<div class="background-design"></div>
+<main class="container">
+    <div class="navbar-header">
+        <div class="add-movement" (click)="onCreateMovement()">
+            <mat-icon>add_circle_outline</mat-icon>
+            <span>Agregar movimiento</span>
+        </div>
+        <div class="navbar">
+            <mat-icon>credit_card</mat-icon>
+            <mat-icon (click)="onIncomesPressed()">attach_money</mat-icon>
+            <mat-icon (click)="onExpensesPressed()">money_off</mat-icon>
+            <mat-icon (click)="onHomePressed()">home</mat-icon>
+        </div>
+        <div class="logout" (click)="onLogout()">
+            <mat-icon>account_circle</mat-icon>
+            <span>Cerrar sesión</span>
+        </div>
+    </div>
+
+    <div class="header-title">
+        <span *ngIf="showIncomes">Ingresos</span>
+        <span *ngIf="!showIncomes">Egresos</span>
+    </div>
+
+    <div class="content">
+        <div class="scroll">
+            <table mat-table [dataSource]="movementsList">
+                <ng-container matColumnDef="description">
+                    <th mat-header-cell *matHeaderCellDef>Descripcion</th>
+                    <td mat-cell *matCellDef="let element">
+                        {{ element.description }}
+                    </td>
+                </ng-container>
+    
+                <ng-container matColumnDef="createdDate">
+                    <th mat-header-cell *matHeaderCellDef>Fecha</th>
+                    <td mat-cell class="dateColumn" *matCellDef="let element">
+                        {{ element.createdDate | date }}
+                    </td>
+                </ng-container>
+    
+                <ng-container matColumnDef="amount">
+                    <th mat-header-cell *matHeaderCellDef>Monto</th>
+                    <td mat-cell class="amountColumn" *matCellDef="let element">
+                        {{ element.amount | currency: "Q":"code" }}
+                    </td>
+                </ng-container>
+    
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
+        </div>
+    </div>
+
+</main>

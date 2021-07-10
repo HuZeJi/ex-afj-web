@@ -1,0 +1,49 @@
+:host::ng-deep {
+  * {
+    font-size: 0.7rem;
+  }
+  .mat-dialog-title {
+    width: 100%;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 20px;
+  }
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: #f0f0f0;
+    border-color: #d8d8d8;
+    border-radius: 5px;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 0;
+  }
+  .mat-flat-button.mat-primary,
+  .mat-raised-button.mat-primary,
+  .mat-fab.mat-primary,
+  .mat-mini-fab.mat-primary {
+    background-color: #7084ff;
+  }
+  .mat-flat-button.mat-button-disabled.mat-button-disabled {
+    background-color: lightblue;
+  }
+  .mat-flat-button {
+    padding-top: 5px;
+  }
+
+  .mat-button-wrapper {
+    color: white;
+  }
+
+  .container,
+  .content {
+    display: inline-grid;
+    width: 100%;
+  }
+
+  .btn-cancel {
+    .mat-button-wrapper {
+      color: #f44336;
+    }
+    margin-top: 15px;
+  }
+}

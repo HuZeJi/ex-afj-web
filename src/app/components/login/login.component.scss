@@ -1,0 +1,60 @@
+@keyframes slidebg {
+  to {
+    background-position: 20vw;
+  }
+}
+
+:host::ng-deep {
+  * {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 1);
+  }
+  
+  .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 0;
+  }
+
+  .container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(180deg, #e66c9a 0%, #7dabff 100%), #f77eac;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .content {
+      max-width: 300px;
+
+      h1,
+      .form {
+        width: 100%;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 3rem;
+      }
+
+      .form {
+        display: inline-grid;
+
+        .btn {
+          margin-bottom: 25px;
+        }
+
+        .btn-login,
+        .btn-sign-in {
+          background-color: #ff6b86;
+        }
+
+        .btn-google {
+          background-color: #67adee;
+          transition: background-color 0.5s ease-out;
+        }
+      }
+    }
+  }
+}
