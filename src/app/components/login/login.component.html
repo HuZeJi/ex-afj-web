@@ -7,20 +7,21 @@
     <div class="form">
       <mat-form-field appearance="outline">
         <mat-label>Correo</mat-label>
-        <input matInput placeholder="Correo">
+        <input matInput placeholder="Correo" [(ngModel)]="email">
       </mat-form-field>
       
       <mat-form-field appearance="outline">
         <mat-label>Contraseña</mat-label>
-        <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'">
+        <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'" [(ngModel)]="password">
         <button matSuffix mat-icon-button (click)="hide = !hide">
-          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <span *ngIf="hide"><mat-icon>visibility</mat-icon></span>
+          <span *ngIf="!hide"><mat-icon>visibility_off</mat-icon></span>
         </button>
       </mat-form-field>
     
-      <button class="btn btn-google" mat-raised-button>Iniciar Sesión con Google</button>
-      <button class="btn btn-login" mat-raised-button>Iniciar Sesión</button>
-      <button class="btn btn-sign-in" mat-raised-button>Crear cuenta</button>
+      <button class="btn btn-google" mat-raised-button (click)="loginWithGoogle()">Iniciar Sesión con Google</button>
+      <button class="btn btn-login" mat-raised-button (click)="onValidateUser(this.email, this.password)">Iniciar Sesión</button>
+      <button class="btn btn-sign-in" mat-raised-button (click)="onCreateUser()">Crear cuenta</button>
 
     </div>
   </div>

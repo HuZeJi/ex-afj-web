@@ -1,0 +1,33 @@
+<main class="container">
+    <h1 mat-dialog-title>Movimiento</h1>
+    <div mat-dialog-content>
+        <form class="content">
+            <mat-form-field appearance="outline">
+                <mat-label>Descripción</mat-label>
+                <textarea matInput [(ngModel)]="newMovement.description" type="text" name="description"></textarea>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [(ngModel)]="selectedDate" name="createdDate" type="date"/>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Monto</mat-label>
+                <input matInput [(ngModel)]="newMovement.amount" type="number" name="amount" />
+            </mat-form-field>
+
+            <div class="slider-toggle">
+                <div class="income-side" [ngClass]="transactionType === 0 ? 'deactivated' : ''" (click)="onTransactionTypeUpdated()">
+                    Ingreso
+                </div>
+                <div class="expenses-side"  [ngClass]="transactionType === 1 ? 'deactivated' : ''" (click)="onTransactionTypeUpdated()">
+                    Egreso
+                </div>
+            </div>
+
+            <button mat-flat-button color="primary" (click)="onSaveMovement()">Guardar</button>
+            <button mat-button color="warn" class="btn-cancel" (click)="onClose()">Cancelar</button>
+        </form>
+    </div>
+</main>

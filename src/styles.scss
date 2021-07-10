@@ -5,3 +5,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 * {
     font-family: 'Baloo Tammudu 2', cursive;
 }
+
+.custom-container .mat-dialog-container {
+  border-radius: 25px !important;
+}

@@ -4,10 +4,14 @@
   }
 }
 
-::ng-deep {
+:host::ng-deep {
   * {
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 1);
+  }
+  
+  .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 0;
   }
 
   .container {

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "supple-antenna-315400": {
+      "hosting": {
+        "ex-afj-web": [
+          "supple-antenna-315400"
+        ]
+      }
+    }
+  }
+}
